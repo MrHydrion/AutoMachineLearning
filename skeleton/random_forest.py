@@ -14,6 +14,10 @@ from typing import Any
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 
+# prediction metrics
+from sklearn.metrics import accuracy_score, f1_score
+
+
 Config = dict[str, Any]
 Evaluator = Callable[[Config, int, int], dict[str, Any]]
 
@@ -37,7 +41,15 @@ def sample_configuration(rng: np.random.Generator) -> Config:
     dependencies between parameters if you extend the example search space.
     """
 
-    raise NotImplementedError("Implement sampling or use a package's sampler")
+    sample_config = {
+        "max_depth": rng.choice(SEARCH_SPACE["max_depth"]),
+        "max_features": rng.choice(SEARCH_SPACE["max_features"]),
+        "min_samples_leaf": rng.choice(SEARCH_SPACE["min_samples_leaf"])
+    }
+
+    return sample_config
+
+    
 
 
 def make_classifier(config: Config, n_estimators: int, seed: int) -> RandomForestClassifier:
@@ -64,8 +76,17 @@ def predictive_metrics(
     your metrics require. Use the same definitions for validation, final testing,
     and the foundation comparison. This function must not fit the model.
     """
+    # Accuracy, how often does the model predict correctly
+    # Macro F1-score: balances precision and recall, since neither is more important, and gives each class equal weight
+    # since neither precision nor recall is preferred and class frequencies may differ
 
-    raise NotImplementedError("Implement predictive_metrics in random_forest.py")
+    y_pred = model.predict(X)
+
+    return {
+        "accuracy": accuracy_score(y, y_pred),
+        "f1-score": f1_score(y, y_pred, average="macro")
+    }
+
 
 
 def validation_objective(metrics: dict[str, float]) -> float:
@@ -74,8 +95,11 @@ def validation_objective(metrics: dict[str, float]) -> float:
     Explain its relationship to the primary metric and whether higher or lower
     is better. Apply that direction consistently in all optimisers.
     """
+    # accuracy is the most important one because it dirrectly measures how often the model predicts the correct class
+    # Macro f1 is used as an additional metric
+    # higher accuracy is better
 
-    raise NotImplementedError("Implement validation_objective in random_forest.py")
+    return metrics["accuracy"]
 
 
 def make_evaluator(
