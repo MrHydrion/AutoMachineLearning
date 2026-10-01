@@ -8,7 +8,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from random_forest import Config, Evaluator
+from random_forest import Config, Evaluator, sample_configuration
+
+import numpy as np
 
 
 def optimise_random_search(
@@ -24,5 +26,26 @@ def optimise_random_search(
     whether higher or lower values are better.
     Return the selected configuration and results needed for your analysis.
     """
+    best_config = None
+    best_score = -1 # accuracy always higher than -1
+    results = [] # here for each trail we save the eval_dict in case we want to return it as well or look at info
 
-    raise NotImplementedError
+    rng = np.random.default_rng(seed=seed)
+
+    # n_trails attempt are made to randomly design it
+    for trail in range(n_trials):
+        attempt_config = sample_configuration(rng)
+        # use the evaluator to get the metrics
+        eval_dict = evaluator(attempt_config, n_trees, seed)
+        results.append(eval_dict)
+
+        # compare objective with saved score, highest score is the best config
+        if best_score < eval_dict["objective"]:
+            best_score = eval_dict["objective"]
+            best_config = eval_dict["configuration"]
+
+    print(f"best found config: {best_config} ")
+    print(f"best found score: {best_score}")
+
+    # return the best found config with its score
+    return (best_config, best_score)    
