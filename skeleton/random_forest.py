@@ -79,12 +79,13 @@ def predictive_metrics(
     # Accuracy, how often does the model predict correctly
     # Macro F1-score: balances precision and recall, since neither is more important, and gives each class equal weight
     # since neither precision nor recall is preferred and class frequencies may differ
+    # there are more classes than 2 so not binary mode
 
     y_pred = model.predict(X)
 
     return {
         "accuracy": accuracy_score(y, y_pred),
-        "f1-score": f1_score(y, y_pred, average="macro")
+        "macro-f1": f1_score(y, y_pred, average="macro")
     }
 
 
