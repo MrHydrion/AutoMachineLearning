@@ -28,9 +28,10 @@ N_JOBS = 4
 # Optional starting point. Choose and justify a shared space and sampling rules,
 # or use your optimiser package's search-space tools. Keep tree count separate.
 SEARCH_SPACE = {
-    "max_depth": (None, 4, 16, 32),
-    "max_features": ("sqrt", 0.5, 1.0),
-    "min_samples_leaf": (1, 2, 4, 8),
+    "max_depth": (None, 4, 8, 16, 32, 64), # controls the maximum number of level thata tree can grow
+    "max_features": ("sqrt", 0.25, 0.5, 0.75, 1.0), # controls the number of features considered at each split
+    "min_samples_leaf": (1, 2, 4, 8, 16),  # minimum number of samples required in a leaf node
+    "min_samples_split": (2, 4, 8, 16)  # minimum number of samples required to split a node
 }
 
 
@@ -41,10 +42,13 @@ def sample_configuration(rng: np.random.Generator) -> Config:
     dependencies between parameters if you extend the example search space.
     """
 
+    # done with rng.integers since we combining different values for some of them
+    # the last two only have int so its not needed
     sample_config = {
-        "max_depth": rng.choice(SEARCH_SPACE["max_depth"]),
-        "max_features": rng.choice(SEARCH_SPACE["max_features"]),
-        "min_samples_leaf": rng.choice(SEARCH_SPACE["min_samples_leaf"])
+        "max_depth": SEARCH_SPACE["max_depth"][rng.integers(len(SEARCH_SPACE["max_depth"]))],
+        "max_features": SEARCH_SPACE["max_features"][rng.integers(len(SEARCH_SPACE["max_features"]))],
+        "min_samples_leaf": rng.choice(SEARCH_SPACE["min_samples_leaf"]),
+        "min_samples_split": rng.choice(SEARCH_SPACE["min_samples_split"])
     }
 
     return sample_config
