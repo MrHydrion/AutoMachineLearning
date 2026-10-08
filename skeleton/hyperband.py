@@ -5,15 +5,10 @@ Choose and justify the allocation schedule and how you retain search results.
 """
 
 from __future__ import annotations
-
 from typing import Any
-
 from operator import itemgetter # used to sort based on score
-
 from random_forest import Config, Evaluator, sample_configuration
-
 import math
-
 import numpy as np
 
 def optimise_hyperband(
@@ -50,7 +45,7 @@ def optimise_hyperband(
     R = max_trees    
 
     # / min_trees to make sure it does not fall below this value
-    s_max = math.floor(math.log(x=R / min_trees, base=reduction_factor))
+    s_max = math.floor(math.log(R / min_trees, reduction_factor))
 
     B = (s_max + 1) * R
     #  we start with most configurations and go to least (so s+1, s-1, ..., 0)
@@ -113,29 +108,7 @@ def optimise_hyperband(
             best_result = best_found_tuple[1]
             best_config = best_found_tuple[0]
 
-    return best_config, best_result # still need to do something with all results
+    return best_config, best_result, all_results # still need to do something with all results
 
             
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

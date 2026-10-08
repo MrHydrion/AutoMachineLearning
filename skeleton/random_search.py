@@ -5,11 +5,8 @@ to retain the results needed to analyse search progress and computational effort
 """
 
 from __future__ import annotations
-
 from typing import Any
-
 from random_forest import Config, Evaluator, sample_configuration
-
 import numpy as np
 
 
@@ -44,8 +41,9 @@ def optimise_random_search(
             best_score = eval_dict["objective"]
             best_config = eval_dict["configuration"]
 
-    print(f"best found config: {best_config} ")
-    print(f"best found score: {best_score}")
+    # print(f"best found config: {best_config} ")
+    # print(f"best found score: {best_score}")
 
     # return the best found config with its score
-    return (best_config, best_score)    
+    return best_config, best_score, results  
+

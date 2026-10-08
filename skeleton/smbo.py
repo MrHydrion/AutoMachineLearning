@@ -14,7 +14,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.preprocessing import OneHotEncoder
 
 
-# generate every legal configuration in the shared search space
+# generate every configuration in the search space
 def generate_configurations() -> list[Config]:
 
     parameter_names = list(SEARCH_SPACE.keys())
@@ -79,7 +79,7 @@ def encode_configurations(
     return encoder.transform(dataframe)
 
 
-# fit an encoder on every legal configuration in the search space
+# fit an encoder on every configuration in the search space
 def create_encoder(
     configurations: list[Config]
 ) -> OneHotEncoder:
@@ -130,11 +130,11 @@ def select_next_configuration(
 ) -> tuple[Config, float, float, float]:
 
     X_candidates = encode_configurations(candidate_configurations, encoder)
-
     tree_predictions = np.array([tree.predict(X_candidates) for tree in surrogate.estimators_])
 
     predicted_mean = tree_predictions.mean(axis=0)
     predicted_std = tree_predictions.std(axis=0)
+
     acquisition = predicted_mean + beta * predicted_std
     best_index = int(np.argmax(acquisition))
 

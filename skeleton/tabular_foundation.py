@@ -4,13 +4,9 @@ Use a suitable package directly, adapt this interface, or organise your own expe
 """
 
 from __future__ import annotations
-
 from typing import Any
-
 from data_loading import DataSplits
-
 from tabpfn import TabPFNClassifier
-
 from time import perf_counter
 
 # prediction metrics
