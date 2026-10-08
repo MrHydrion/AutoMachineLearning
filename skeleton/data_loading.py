@@ -9,6 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+import os
 import numpy as np
 import openml
 import pandas as pd
@@ -27,6 +28,7 @@ DATASETS = {
     "covertype": 1596,
 }
 
+os.environ["TABPFN_TOKEN"] = "tabpfn_sk_e2V4B2SIdiZIyKR5aJUNCXP9u5Qg1AfU9iREKn-LmJE"
 
 @dataclass
 class DataSplits:

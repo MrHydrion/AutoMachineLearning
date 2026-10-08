@@ -80,7 +80,7 @@ def parse_args() -> argparse.Namespace:
         choices=["default", "random", "smbo", "hyperband", "foundation"],
     )
     # parser.add_argument("--seed", type=int, default=17)
-    parser.add_argument("--seeds", nargs="+", type=int, default=[1, 2, 3])
+    parser.add_argument("--seeds", nargs="+", type=int, default=[17, 18, 19])
     parser.add_argument("--split-seed", type=int, default=2026)
     parser.add_argument("--cache-dir", type=Path, default=Path("data_cache"))
     parser.add_argument("--output", type=Path, default=Path("results.json"))
