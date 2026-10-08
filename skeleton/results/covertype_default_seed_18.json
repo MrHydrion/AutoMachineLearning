@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-08T10:00:12.329881+00:00",
+    "profile": "course",
+    "datasets": [
+      "breast-w",
+      "credit-g",
+      "phoneme",
+      "electricity",
+      "covertype"
+    ],
+    "methods": [
+      "default",
+      "random",
+      "smbo",
+      "hyperband"
+    ],
+    "seeds": [
+      17,
+      18,
+      19
+    ],
+    "split_seed": 2026,
+    "cache_dir": "data_cache",
+    "max_samples": null,
+    "min_trees": 3,
+    "max_trees": 81,
+    "n_trials": 16,
+    "search_space": {
+      "max_depth": [
+        null,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "max_features": [
+        "sqrt",
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "min_samples_leaf": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "min_samples_split": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "random_forest_n_jobs": 4,
+    "foundation_dataset": "covertype",
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "sklearn_version": "1.7.2"
+  },
+  "result": {
+    "dataset": "covertype",
+    "method": "default",
+    "seed": 18,
+    "split_seed": 2026,
+    "profile": "course",
+    "n_trials": 16,
+    "min_trees": 3,
+    "max_trees": 81,
+    "selected_configuration": {},
+    "selected_validation_objective": 0.948770685782639,
+    "history": [
+      {
+        "configuration": {},
+        "metrics": {
+          "accuracy": 0.948770685782639,
+          "macro-f1": 0.9181342418073558
+        },
+        "objective": 0.948770685782639,
+        "n_trees": 81,
+        "elapsed_sec": 13.635339200001908,
+        "trial": 1,
+        "selection_method": "baseline"
+      }
+    ],
+    "search_seconds": 13.662925600016024,
+    "final_result": {
+      "metrics": {
+        "accuracy": 0.955792879701901,
+        "macro-f1": 0.9276966504142868
+      },
+      "elapsed_sec": 18.11125760001596
+    },
+    "final_evaluation_seconds": 18.151648999977624
+  }
+}

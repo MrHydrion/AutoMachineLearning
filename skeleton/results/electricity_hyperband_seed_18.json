@@ -1,0 +1,1335 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-08T10:00:12.329881+00:00",
+    "profile": "course",
+    "datasets": [
+      "breast-w",
+      "credit-g",
+      "phoneme",
+      "electricity",
+      "covertype"
+    ],
+    "methods": [
+      "default",
+      "random",
+      "smbo",
+      "hyperband"
+    ],
+    "seeds": [
+      17,
+      18,
+      19
+    ],
+    "split_seed": 2026,
+    "cache_dir": "data_cache",
+    "max_samples": null,
+    "min_trees": 3,
+    "max_trees": 81,
+    "n_trials": 16,
+    "search_space": {
+      "max_depth": [
+        null,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "max_features": [
+        "sqrt",
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "min_samples_leaf": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "min_samples_split": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "random_forest_n_jobs": 4,
+    "foundation_dataset": "covertype",
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "sklearn_version": "1.7.2"
+  },
+  "result": {
+    "dataset": "electricity",
+    "method": "hyperband",
+    "seed": 18,
+    "split_seed": 2026,
+    "profile": "course",
+    "n_trials": 16,
+    "min_trees": 3,
+    "max_trees": 81,
+    "selected_configuration": {
+      "max_depth": 32,
+      "max_features": 0.75,
+      "min_samples_leaf": 2,
+      "min_samples_split": 8
+    },
+    "selected_validation_objective": 0.9056603773584906,
+    "history": [
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8519254110118063,
+          "macro-f1": 0.8476455797505639
+        },
+        "objective": 0.8519254110118063,
+        "n_trees": 3,
+        "elapsed_sec": 0.12880029997904785,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 1
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8477325388944058,
+          "macro-f1": 0.8431992923862417
+        },
+        "objective": 0.8477325388944058,
+        "n_trees": 3,
+        "elapsed_sec": 0.09397210000315681,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 2
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8698002868807239,
+          "macro-f1": 0.8667510242675377
+        },
+        "objective": 0.8698002868807239,
+        "n_trees": 3,
+        "elapsed_sec": 0.18307719999575056,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 3
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.75,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8640626724042811,
+          "macro-f1": 0.8606068989349032
+        },
+        "objective": 0.8640626724042811,
+        "n_trees": 3,
+        "elapsed_sec": 0.1457425999979023,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 4
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.5,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8660487697230498,
+          "macro-f1": 0.8624547803333305
+        },
+        "objective": 0.8660487697230498,
+        "n_trees": 3,
+        "elapsed_sec": 0.11824059998616576,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 5
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.25,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8351539225422046,
+          "macro-f1": 0.8306312040456812
+        },
+        "objective": 0.8351539225422046,
+        "n_trees": 3,
+        "elapsed_sec": 0.08842690000892617,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 6
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8698002868807239,
+          "macro-f1": 0.8667510242675377
+        },
+        "objective": 0.8698002868807239,
+        "n_trees": 3,
+        "elapsed_sec": 0.17710329999681562,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 7
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 4,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8721174004192872,
+          "macro-f1": 0.8688429863669472
+        },
+        "objective": 0.8721174004192872,
+        "n_trees": 3,
+        "elapsed_sec": 0.17779829999199137,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 8
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.75,
+          "min_samples_leaf": 1,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8650557210636655,
+          "macro-f1": 0.8614198439429805
+        },
+        "objective": 0.8650557210636655,
+        "n_trees": 3,
+        "elapsed_sec": 0.1738154999911785,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 9
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8712346904998345,
+          "macro-f1": 0.8680869429356586
+        },
+        "objective": 0.8712346904998345,
+        "n_trees": 3,
+        "elapsed_sec": 0.13986960001057014,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 10
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": "sqrt",
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8438706829968001,
+          "macro-f1": 0.8393763639906873
+        },
+        "objective": 0.8438706829968001,
+        "n_trees": 3,
+        "elapsed_sec": 0.06777680001687258,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 11
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.75,
+          "min_samples_leaf": 16,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8489462650336533,
+          "macro-f1": 0.8452536631353185
+        },
+        "objective": 0.8489462650336533,
+        "n_trees": 3,
+        "elapsed_sec": 0.13584559998707846,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 12
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 1.0,
+          "min_samples_leaf": 16,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8567803155687962,
+          "macro-f1": 0.853149868506438
+        },
+        "objective": 0.8567803155687962,
+        "n_trees": 3,
+        "elapsed_sec": 0.17444470000918955,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 13
+      },
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 0.25,
+          "min_samples_leaf": 16,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.7739159218801721,
+          "macro-f1": 0.7569878967584209
+        },
+        "objective": 0.7739159218801721,
+        "n_trees": 3,
+        "elapsed_sec": 0.06977119998191483,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 14
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8716760454595609,
+          "macro-f1": 0.8685114767527051
+        },
+        "objective": 0.8716760454595609,
+        "n_trees": 3,
+        "elapsed_sec": 0.1563511999847833,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 15
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.25,
+          "min_samples_leaf": 16,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8206995476111663,
+          "macro-f1": 0.8152249972645791
+        },
+        "objective": 0.8206995476111663,
+        "n_trees": 3,
+        "elapsed_sec": 0.07464939999044873,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 16
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.25,
+          "min_samples_leaf": 8,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8438706829968001,
+          "macro-f1": 0.8393763639906873
+        },
+        "objective": 0.8438706829968001,
+        "n_trees": 3,
+        "elapsed_sec": 0.09360829999786802,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 17
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8519254110118063,
+          "macro-f1": 0.8476455797505639
+        },
+        "objective": 0.8519254110118063,
+        "n_trees": 3,
+        "elapsed_sec": 0.10753849998582155,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 18
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8698002868807239,
+          "macro-f1": 0.8667510242675377
+        },
+        "objective": 0.8698002868807239,
+        "n_trees": 3,
+        "elapsed_sec": 0.2601835999812465,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 19
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8440913604766633,
+          "macro-f1": 0.8395422573158241
+        },
+        "objective": 0.8440913604766633,
+        "n_trees": 3,
+        "elapsed_sec": 0.08391089999349788,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 20
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": "sqrt",
+          "min_samples_leaf": 16,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.7939975725477215,
+          "macro-f1": 0.783976440507961
+        },
+        "objective": 0.7939975725477215,
+        "n_trees": 3,
+        "elapsed_sec": 0.0800001000170596,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 21
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": "sqrt",
+          "min_samples_leaf": 8,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.835043583802273,
+          "macro-f1": 0.8305241151235006
+        },
+        "objective": 0.835043583802273,
+        "n_trees": 3,
+        "elapsed_sec": 0.10415180001291446,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 22
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.75,
+          "min_samples_leaf": 1,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8082312699988966,
+          "macro-f1": 0.8007954728027005
+        },
+        "objective": 0.8082312699988966,
+        "n_trees": 3,
+        "elapsed_sec": 0.10423399999854155,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 23
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.791459781529295,
+          "macro-f1": 0.7807281000636679
+        },
+        "objective": 0.791459781529295,
+        "n_trees": 3,
+        "elapsed_sec": 0.08726070000557229,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 24
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": "sqrt",
+          "min_samples_leaf": 16,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8206995476111663,
+          "macro-f1": 0.8152249972645791
+        },
+        "objective": 0.8206995476111663,
+        "n_trees": 3,
+        "elapsed_sec": 0.09119720000308007,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 25
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": "sqrt",
+          "min_samples_leaf": 2,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8414432307183052,
+          "macro-f1": 0.8371111528159154
+        },
+        "objective": 0.8414432307183052,
+        "n_trees": 3,
+        "elapsed_sec": 0.08868539999821223,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 26
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.25,
+          "min_samples_leaf": 4,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.7983007834050535,
+          "macro-f1": 0.7888746409744758
+        },
+        "objective": 0.7983007834050535,
+        "n_trees": 3,
+        "elapsed_sec": 0.0914158999803476,
+        "bracket": 3,
+        "stage": 0,
+        "evaluation": 27
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 4,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8945161646254,
+          "macro-f1": 0.8919713914257266
+        },
+        "objective": 0.8945161646254,
+        "n_trees": 9,
+        "elapsed_sec": 0.38914099999237806,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 28
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8914266799073155,
+          "macro-f1": 0.8888227770145436
+        },
+        "objective": 0.8914266799073155,
+        "n_trees": 9,
+        "elapsed_sec": 0.4783154000178911,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 29
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8930817610062893,
+          "macro-f1": 0.8906038434966681
+        },
+        "objective": 0.8930817610062893,
+        "n_trees": 9,
+        "elapsed_sec": 0.3221579000237398,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 30
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8905439699878628,
+          "macro-f1": 0.8879958061166116
+        },
+        "objective": 0.8905439699878628,
+        "n_trees": 9,
+        "elapsed_sec": 0.3999267999897711,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 31
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8905439699878628,
+          "macro-f1": 0.8879958061166116
+        },
+        "objective": 0.8905439699878628,
+        "n_trees": 9,
+        "elapsed_sec": 0.46349360002204776,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 32
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8905439699878628,
+          "macro-f1": 0.8879958061166116
+        },
+        "objective": 0.8905439699878628,
+        "n_trees": 9,
+        "elapsed_sec": 0.3896240000030957,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 33
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.5,
+          "min_samples_leaf": 2,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8910956636875207,
+          "macro-f1": 0.8882590326316122
+        },
+        "objective": 0.8910956636875207,
+        "n_trees": 9,
+        "elapsed_sec": 0.2386609000095632,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 34
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.75,
+          "min_samples_leaf": 1,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8831512744124462,
+          "macro-f1": 0.8800903883765455
+        },
+        "objective": 0.8831512744124462,
+        "n_trees": 9,
+        "elapsed_sec": 0.2865119999914896,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 35
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.75,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8777446761557983,
+          "macro-f1": 0.8747691752063568
+        },
+        "objective": 0.8777446761557983,
+        "n_trees": 9,
+        "elapsed_sec": 0.32054680000874214,
+        "bracket": 3,
+        "stage": 1,
+        "evaluation": 36
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 4,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8994814079223216,
+          "macro-f1": 0.8970599894628659
+        },
+        "objective": 0.8994814079223216,
+        "n_trees": 27,
+        "elapsed_sec": 0.8307078000216279,
+        "bracket": 3,
+        "stage": 2,
+        "evaluation": 37
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.9029019088602008,
+          "macro-f1": 0.9006006356621903
+        },
+        "objective": 0.9029019088602008,
+        "n_trees": 27,
+        "elapsed_sec": 0.7671189999964554,
+        "bracket": 3,
+        "stage": 2,
+        "evaluation": 38
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8988193754827319,
+          "macro-f1": 0.8963531865912922
+        },
+        "objective": 0.8988193754827319,
+        "n_trees": 27,
+        "elapsed_sec": 0.6690672999829985,
+        "bracket": 3,
+        "stage": 2,
+        "evaluation": 39
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.9056603773584906,
+          "macro-f1": 0.9033541869837087
+        },
+        "objective": 0.9056603773584906,
+        "n_trees": 81,
+        "elapsed_sec": 1.8275324999995064,
+        "bracket": 3,
+        "stage": 3,
+        "evaluation": 40
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8835926293721725,
+          "macro-f1": 0.8805777761141165
+        },
+        "objective": 0.8835926293721725,
+        "n_trees": 9,
+        "elapsed_sec": 0.18980609998106956,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 41
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 1,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8892199051086837,
+          "macro-f1": 0.8865709170051702
+        },
+        "objective": 0.8892199051086837,
+        "n_trees": 9,
+        "elapsed_sec": 0.39282780000939965,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 42
+      },
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.7597925631689286,
+          "macro-f1": 0.7379238721830104
+        },
+        "objective": 0.7597925631689286,
+        "n_trees": 9,
+        "elapsed_sec": 0.18059430000721477,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 43
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.75,
+          "min_samples_leaf": 1,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.826437162087609,
+          "macro-f1": 0.8218648172524525
+        },
+        "objective": 0.826437162087609,
+        "n_trees": 9,
+        "elapsed_sec": 0.17467730000498705,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 44
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.5,
+          "min_samples_leaf": 16,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8585457354077016,
+          "macro-f1": 0.8547822847767375
+        },
+        "objective": 0.8585457354077016,
+        "n_trees": 9,
+        "elapsed_sec": 0.2054700999869965,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 45
+      },
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 0.5,
+          "min_samples_leaf": 8,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.7602339181286549,
+          "macro-f1": 0.7386952994965408
+        },
+        "objective": 0.7602339181286549,
+        "n_trees": 9,
+        "elapsed_sec": 0.09414910001214594,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 46
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.75,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8777446761557983,
+          "macro-f1": 0.8747691752063568
+        },
+        "objective": 0.8777446761557983,
+        "n_trees": 9,
+        "elapsed_sec": 0.26888400001917034,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 47
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.5,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8127551583360918,
+          "macro-f1": 0.8042041058993046
+        },
+        "objective": 0.8127551583360918,
+        "n_trees": 9,
+        "elapsed_sec": 0.26414260000456125,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 48
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8914266799073155,
+          "macro-f1": 0.8888227770145436
+        },
+        "objective": 0.8914266799073155,
+        "n_trees": 9,
+        "elapsed_sec": 0.3656830000109039,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 49
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": "sqrt",
+          "min_samples_leaf": 16,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.8348229063224099,
+          "macro-f1": 0.8295092075044036
+        },
+        "objective": 0.8348229063224099,
+        "n_trees": 9,
+        "elapsed_sec": 0.15696079999906942,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 50
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.75,
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8223546287101401,
+          "macro-f1": 0.8156288408999726
+        },
+        "objective": 0.8223546287101401,
+        "n_trees": 9,
+        "elapsed_sec": 0.2096822000166867,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 51
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.5,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8796204347346354,
+          "macro-f1": 0.8764401784053062
+        },
+        "objective": 0.8796204347346354,
+        "n_trees": 9,
+        "elapsed_sec": 0.24899520000326447,
+        "bracket": 2,
+        "stage": 0,
+        "evaluation": 52
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8988193754827319,
+          "macro-f1": 0.8963531865912922
+        },
+        "objective": 0.8988193754827319,
+        "n_trees": 27,
+        "elapsed_sec": 0.6319065999996383,
+        "bracket": 2,
+        "stage": 1,
+        "evaluation": 53
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 1.0,
+          "min_samples_leaf": 1,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8965022619441686,
+          "macro-f1": 0.894056591922618
+        },
+        "objective": 0.8965022619441686,
+        "n_trees": 27,
+        "elapsed_sec": 0.9329028000065591,
+        "bracket": 2,
+        "stage": 1,
+        "evaluation": 54
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8896612600684101,
+          "macro-f1": 0.8866340053853288
+        },
+        "objective": 0.8896612600684101,
+        "n_trees": 27,
+        "elapsed_sec": 0.3083448999968823,
+        "bracket": 2,
+        "stage": 1,
+        "evaluation": 55
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.5,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8901026150281364,
+          "macro-f1": 0.8871705129508918
+        },
+        "objective": 0.8901026150281364,
+        "n_trees": 27,
+        "elapsed_sec": 0.4444521999976132,
+        "bracket": 2,
+        "stage": 1,
+        "evaluation": 56
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.75,
+          "min_samples_leaf": 4,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.9016881827209533,
+          "macro-f1": 0.8993268976333484
+        },
+        "objective": 0.9016881827209533,
+        "n_trees": 81,
+        "elapsed_sec": 1.7376548000029288,
+        "bracket": 2,
+        "stage": 2,
+        "evaluation": 57
+      },
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 1.0,
+          "min_samples_leaf": 1,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.7595718856890654,
+          "macro-f1": 0.737719573270897
+        },
+        "objective": 0.7595718856890654,
+        "n_trees": 27,
+        "elapsed_sec": 0.29826219999813475,
+        "bracket": 1,
+        "stage": 0,
+        "evaluation": 58
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.5,
+          "min_samples_leaf": 16,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.8141895619552024,
+          "macro-f1": 0.805936432574163
+        },
+        "objective": 0.8141895619552024,
+        "n_trees": 27,
+        "elapsed_sec": 0.35077729998738505,
+        "bracket": 1,
+        "stage": 0,
+        "evaluation": 59
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": "sqrt",
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8789584022950457,
+          "macro-f1": 0.875407566661377
+        },
+        "objective": 0.8789584022950457,
+        "n_trees": 27,
+        "elapsed_sec": 0.33604759999434464,
+        "bracket": 1,
+        "stage": 0,
+        "evaluation": 60
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8775239986759351,
+          "macro-f1": 0.8739165647714916
+        },
+        "objective": 0.8775239986759351,
+        "n_trees": 27,
+        "elapsed_sec": 0.2910730000003241,
+        "bracket": 1,
+        "stage": 0,
+        "evaluation": 61
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": 0.25,
+          "min_samples_leaf": 16,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8438706829968001,
+          "macro-f1": 0.8386117886337194
+        },
+        "objective": 0.8438706829968001,
+        "n_trees": 27,
+        "elapsed_sec": 0.29151870001805946,
+        "bracket": 1,
+        "stage": 0,
+        "evaluation": 62
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.75,
+          "min_samples_leaf": 16,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8763102725366876,
+          "macro-f1": 0.8732332491829573
+        },
+        "objective": 0.8763102725366876,
+        "n_trees": 27,
+        "elapsed_sec": 0.6312345000042114,
+        "bracket": 1,
+        "stage": 0,
+        "evaluation": 63
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": "sqrt",
+          "min_samples_leaf": 2,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.8830409356725146,
+          "macro-f1": 0.8796604430220549
+        },
+        "objective": 0.8830409356725146,
+        "n_trees": 81,
+        "elapsed_sec": 0.750224600022193,
+        "bracket": 1,
+        "stage": 1,
+        "evaluation": 64
+      },
+      {
+        "configuration": {
+          "max_depth": 16,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8814961933134724,
+          "macro-f1": 0.877968144944075
+        },
+        "objective": 0.8814961933134724,
+        "n_trees": 81,
+        "elapsed_sec": 0.7455000999907497,
+        "bracket": 1,
+        "stage": 1,
+        "evaluation": 65
+      },
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 0.75,
+          "min_samples_leaf": 16,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.7642061127661922,
+          "macro-f1": 0.7443122011728884
+        },
+        "objective": 0.7642061127661922,
+        "n_trees": 81,
+        "elapsed_sec": 0.5963396000151988,
+        "bracket": 0,
+        "stage": 0,
+        "evaluation": 66
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 1.0,
+          "min_samples_leaf": 8,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.892088712346905,
+          "macro-f1": 0.8895990227294424
+        },
+        "objective": 0.892088712346905,
+        "n_trees": 81,
+        "elapsed_sec": 2.129637100006221,
+        "bracket": 0,
+        "stage": 0,
+        "evaluation": 67
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.75,
+          "min_samples_leaf": 8,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.8894405825885469,
+          "macro-f1": 0.8867339323816572
+        },
+        "objective": 0.8894405825885469,
+        "n_trees": 81,
+        "elapsed_sec": 1.6138428999984171,
+        "bracket": 0,
+        "stage": 0,
+        "evaluation": 68
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.8938541321858104,
+          "macro-f1": 0.8909741417342685
+        },
+        "objective": 0.8938541321858104,
+        "n_trees": 81,
+        "elapsed_sec": 0.7611699999833945,
+        "bracket": 0,
+        "stage": 0,
+        "evaluation": 69
+      }
+    ],
+    "search_seconds": 26.315373299992643,
+    "final_result": {
+      "metrics": {
+        "accuracy": 0.9175769612711023,
+        "macro-f1": 0.9154483523036838
+      },
+      "elapsed_sec": 2.329963600001065
+    },
+    "final_evaluation_seconds": 2.3323371000005864
+  }
+}

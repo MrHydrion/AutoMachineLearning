@@ -1,0 +1,398 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-08T10:00:12.329881+00:00",
+    "profile": "course",
+    "datasets": [
+      "breast-w",
+      "credit-g",
+      "phoneme",
+      "electricity",
+      "covertype"
+    ],
+    "methods": [
+      "default",
+      "random",
+      "smbo",
+      "hyperband"
+    ],
+    "seeds": [
+      17,
+      18,
+      19
+    ],
+    "split_seed": 2026,
+    "cache_dir": "data_cache",
+    "max_samples": null,
+    "min_trees": 3,
+    "max_trees": 81,
+    "n_trials": 16,
+    "search_space": {
+      "max_depth": [
+        null,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "max_features": [
+        "sqrt",
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "min_samples_leaf": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "min_samples_split": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "random_forest_n_jobs": 4,
+    "foundation_dataset": "covertype",
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "sklearn_version": "1.7.2"
+  },
+  "result": {
+    "dataset": "breast-w",
+    "method": "smbo",
+    "seed": 18,
+    "split_seed": 2026,
+    "profile": "course",
+    "n_trials": 16,
+    "min_trees": 3,
+    "max_trees": 81,
+    "selected_configuration": {
+      "max_depth": 64,
+      "max_features": 0.25,
+      "min_samples_leaf": 1,
+      "min_samples_split": 4
+    },
+    "selected_validation_objective": 0.9642857142857143,
+    "history": [
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 16
+        },
+        "metrics": {
+          "accuracy": 0.9571428571428572,
+          "macro-f1": 0.9529042386185244
+        },
+        "objective": 0.9571428571428572,
+        "n_trees": 81,
+        "elapsed_sec": 0.09067209999193437,
+        "trial": 1,
+        "selection_method": "initial"
+      },
+      {
+        "configuration": {
+          "max_depth": 32,
+          "max_features": 0.25,
+          "min_samples_leaf": 4,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9571428571428572,
+          "macro-f1": 0.9529042386185244
+        },
+        "objective": 0.9571428571428572,
+        "n_trees": 81,
+        "elapsed_sec": 0.0897605000063777,
+        "trial": 2,
+        "selection_method": "initial"
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 8,
+          "min_samples_split": 2
+        },
+        "metrics": {
+          "accuracy": 0.95,
+          "macro-f1": 0.9447918427130866
+        },
+        "objective": 0.95,
+        "n_trees": 81,
+        "elapsed_sec": 0.09245029999874532,
+        "trial": 3,
+        "selection_method": "initial"
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9642857142857143,
+          "macro-f1": 0.9609353200513422
+        },
+        "objective": 0.9642857142857143,
+        "n_trees": 81,
+        "elapsed_sec": 0.08349409999209456,
+        "trial": 4,
+        "selection_method": "initial"
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.25,
+          "min_samples_leaf": 16,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.95,
+          "macro-f1": 0.9447918427130866
+        },
+        "objective": 0.95,
+        "n_trees": 81,
+        "elapsed_sec": 0.0847308999800589,
+        "trial": 5,
+        "selection_method": "initial"
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": "sqrt",
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.95,
+          "macro-f1": 0.9447918427130866
+        },
+        "objective": 0.95,
+        "n_trees": 81,
+        "elapsed_sec": 0.07289110001875088,
+        "trial": 6,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9606428571428564,
+        "predicted_std": 0.0057583125362649906,
+        "acquisition": 0.9664011696791214
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9642857142857143,
+          "macro-f1": 0.9609353200513422
+        },
+        "objective": 0.9642857142857143,
+        "n_trees": 81,
+        "elapsed_sec": 0.08521029999246821,
+        "trial": 7,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9599285714285706,
+        "predicted_std": 0.005335193128115043,
+        "acquisition": 0.9652637645566856
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.5,
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9357142857142857,
+          "macro-f1": 0.9283072546230442
+        },
+        "objective": 0.9357142857142857,
+        "n_trees": 81,
+        "elapsed_sec": 0.08805429999483749,
+        "trial": 8,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9614285714285703,
+        "predicted_std": 0.005345224838248507,
+        "acquisition": 0.9667737962668188
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 8
+        },
+        "metrics": {
+          "accuracy": 0.9571428571428572,
+          "macro-f1": 0.9529042386185244
+        },
+        "objective": 0.9571428571428572,
+        "n_trees": 81,
+        "elapsed_sec": 0.07404840001254342,
+        "trial": 9,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9584285714285703,
+        "predicted_std": 0.010019368997199437,
+        "acquisition": 0.9684479404257698
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.75,
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9285714285714286,
+          "macro-f1": 0.9207427536231885
+        },
+        "objective": 0.9285714285714286,
+        "n_trees": 81,
+        "elapsed_sec": 0.08441679997486062,
+        "trial": 10,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9559999999999989,
+        "predicted_std": 0.009934479228979283,
+        "acquisition": 0.9659344792289781
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9642857142857143,
+          "macro-f1": 0.9609353200513422
+        },
+        "objective": 0.9642857142857143,
+        "n_trees": 81,
+        "elapsed_sec": 0.08648749999701977,
+        "trial": 11,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9577142857142844,
+        "predicted_std": 0.007997448572730527,
+        "acquisition": 0.965711734287015
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.25,
+          "min_samples_leaf": 16,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.95,
+          "macro-f1": 0.9447918427130866
+        },
+        "objective": 0.95,
+        "n_trees": 81,
+        "elapsed_sec": 0.08530189999146387,
+        "trial": 12,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9613571428571415,
+        "predicted_std": 0.0058983740409142196,
+        "acquisition": 0.9672555168980557
+      },
+      {
+        "configuration": {
+          "max_depth": null,
+          "max_features": 0.25,
+          "min_samples_leaf": 8,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.95,
+          "macro-f1": 0.9447918427130866
+        },
+        "objective": 0.95,
+        "n_trees": 81,
+        "elapsed_sec": 0.0881066000147257,
+        "trial": 13,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9600714285714278,
+        "predicted_std": 0.006396347809971149,
+        "acquisition": 0.9664677763813989
+      },
+      {
+        "configuration": {
+          "max_depth": 8,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9642857142857143,
+          "macro-f1": 0.9609353200513422
+        },
+        "objective": 0.9642857142857143,
+        "n_trees": 81,
+        "elapsed_sec": 0.10644229999161325,
+        "trial": 14,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9607142857142845,
+        "predicted_std": 0.0059333027592272086,
+        "acquisition": 0.9666475884735117
+      },
+      {
+        "configuration": {
+          "max_depth": 4,
+          "max_features": 0.25,
+          "min_samples_leaf": 1,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9571428571428572,
+          "macro-f1": 0.9529042386185244
+        },
+        "objective": 0.9571428571428572,
+        "n_trees": 81,
+        "elapsed_sec": 0.09894900000654161,
+        "trial": 15,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9627142857142843,
+        "predicted_std": 0.0034374884044331313,
+        "acquisition": 0.9661517741187174
+      },
+      {
+        "configuration": {
+          "max_depth": 64,
+          "max_features": 0.25,
+          "min_samples_leaf": 2,
+          "min_samples_split": 4
+        },
+        "metrics": {
+          "accuracy": 0.9642857142857143,
+          "macro-f1": 0.9609353200513422
+        },
+        "objective": 0.9642857142857143,
+        "n_trees": 81,
+        "elapsed_sec": 0.08495260000927374,
+        "trial": 16,
+        "selection_method": "ucb",
+        "predicted_mean": 0.9598571428571419,
+        "predicted_std": 0.0058710635965813175,
+        "acquisition": 0.9657282064537231
+      }
+    ],
+    "search_seconds": 2.0657643000013195,
+    "final_result": {
+      "metrics": {
+        "accuracy": 0.9642857142857143,
+        "macro-f1": 0.960565601937919
+      },
+      "elapsed_sec": 0.09263860000646673
+    },
+    "final_evaluation_seconds": 0.09268480000901036
+  }
+}
