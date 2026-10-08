@@ -83,7 +83,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seeds", nargs="+", type=int, default=[17, 18, 19])
     parser.add_argument("--split-seed", type=int, default=2026)
     parser.add_argument("--cache-dir", type=Path, default=Path("data_cache"))
-    parser.add_argument("--output", type=Path, default=Path("results.json"))
+    # parser.add_argument("--output", type=Path, default=Path("results.json"))
 
     return parser.parse_args()
 
@@ -114,6 +114,34 @@ def make_json(value: Any) -> Any:
             pass
 
     return value
+
+
+def save_result(
+    result: dict[str, Any],
+    metadata: dict[str, Any],
+    output_dir: Path
+) -> None:
+    """Save one completed algorithm run to its own JSON file."""
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    filename = (
+        f"{result['dataset']}_"
+        f"{result['method']}_"
+        f"seed_{result['seed']}.json"
+    )
+
+    output_path = output_dir / filename
+
+    output = {
+        "metadata": metadata,
+        "result": make_json(result),
+    }
+
+    with output_path.open("w", encoding="utf-8") as file:
+        json.dump(output, file, indent=2, allow_nan=False)
+
+    print(f"Saved result to: {output_path.resolve()}", flush=True)
 
 
 # ---------------------------------------------------------------------------
@@ -151,7 +179,7 @@ def create_metadata(args: argparse.Namespace) -> dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 
-def run_dataset(name: str, args: argparse.Namespace, seed: int) -> list[dict[str, Any]]:
+def run_dataset(name: str, args: argparse.Namespace, seed: int, metadata: dict[str, Any]) -> list[dict[str, Any]]:
     """Return example in-memory results; their structure is yours to adapt."""
 
     if args.methods == ["foundation"] and name != FOUNDATION_DATASET:
@@ -247,24 +275,31 @@ def run_dataset(name: str, args: argparse.Namespace, seed: int) -> list[dict[str
                 flush=True
             )
 
-            results.append(
-                {
-                    "dataset": name,
-                    "method": method,
-                    "seed": seed,
-                    "split_seed": args.split_seed,
-                    "profile": args.profile,
-                    "n_trials": n_trials,
-                    "min_trees": min_trees,
-                    "max_trees": max_trees,
-                    "selected_configuration": config,
-                    "selected_validation_objective": selected_score,
-                    "history": history,
-                    "search_seconds": search_seconds,
-                    "final_result": final_result,
-                    "final_evaluation_seconds": final_seconds
-                }
+            result = {
+                "dataset": name,
+                "method": method,
+                "seed": seed,
+                "split_seed": args.split_seed,
+                "profile": args.profile,
+                "n_trials": n_trials,
+                "min_trees": min_trees,
+                "max_trees": max_trees,
+                "selected_configuration": config,
+                "selected_validation_objective": selected_score,
+                "history": history,
+                "search_seconds": search_seconds,
+                "final_result": final_result,
+                "final_evaluation_seconds": final_seconds,
+            }
+
+            results.append(result)
+
+            save_result(
+                result,
+                metadata,
+                Path("results"),
             )
+
 
 
     if "foundation" in args.methods and name == FOUNDATION_DATASET:
@@ -282,17 +317,24 @@ def run_dataset(name: str, args: argparse.Namespace, seed: int) -> list[dict[str
             flush=True
         )
 
-        results.append(
-            {
-                "dataset": name,
-                "method": "foundation",
-                "seed": seed,
-                "split_seed": args.split_seed,
-                "profile": args.profile,
-                "result": foundation_result,
-                "elapsed_seconds": foundation_seconds
-            }
+        result = {
+            "dataset": name,
+            "method": "foundation",
+            "seed": seed,
+            "split_seed": args.split_seed,
+            "profile": args.profile,
+            "result": foundation_result,
+            "elapsed_seconds": foundation_seconds,
+        }
+
+        results.append(result)
+
+        save_result(
+            result,
+            metadata,
+            Path("results"),
         )
+
     return results
 
 
@@ -330,33 +372,19 @@ def main() -> None:
                 flush=True
             )
 
-            results = run_dataset(name, args, seed)
+            results = run_dataset(name, args, seed, metadata)
             all_results.extend(results)
 
     total_seconds = perf_counter() - experiment_start
 
-    output = {
-        "metadata": metadata,
-        "total_experiment_seconds": total_seconds,
-        "results": make_json(all_results)
-    }
-
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    
-    with args.output.open("w", encoding="utf-8") as file:
-
-        json.dump(output, file, indent=2, allow_nan=False )
-
     print(
         f"\n{'=' * 80}\n"
-        f"Experiment finished.\n"
+        f"Experiment finished\n"
         f"Total runtime: {total_seconds:.2f} seconds\n"
-        f"Results saved to: {args.output.resolve()}\n"
         f"Number of result records: {len(all_results)}\n"
-        f"{'=' * 80}",
+        f"\n{'=' * 80}",
         flush=True
     )
-
 
 
 if __name__ == "__main__":
