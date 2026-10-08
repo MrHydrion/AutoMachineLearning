@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-10-08T16:07:44.951000+00:00",
+    "profile": "course",
+    "datasets": [
+      "breast-w",
+      "credit-g",
+      "phoneme",
+      "electricity",
+      "covertype"
+    ],
+    "methods": [
+      "foundation"
+    ],
+    "seeds": [
+      18,
+      19
+    ],
+    "split_seed": 2026,
+    "cache_dir": "data_cache",
+    "max_samples": null,
+    "min_trees": 3,
+    "max_trees": 81,
+    "n_trials": 16,
+    "search_space": {
+      "max_depth": [
+        null,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "max_features": [
+        "sqrt",
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "min_samples_leaf": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "min_samples_split": [
+        2,
+        4,
+        8,
+        16
+      ]
+    },
+    "random_forest_n_jobs": 4,
+    "foundation_dataset": "covertype",
+    "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "sklearn_version": "1.7.2"
+  },
+  "result": {
+    "dataset": "covertype",
+    "method": "foundation",
+    "seed": 18,
+    "split_seed": 2026,
+    "profile": "course",
+    "result": {
+      "metrics": {
+        "accuracy": 0.8863540528213557,
+        "macro-f1": 0.8078106290007698
+      },
+      "elapsed_sec": 5767.7735078,
+      "n_train_samples": 10000
+    },
+    "elapsed_seconds": 5767.9011008
+  }
+}

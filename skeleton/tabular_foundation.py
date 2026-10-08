@@ -28,7 +28,10 @@ def run_foundation_model(splits: DataSplits, seed: int) -> Any:
     and each tuned forest. See Section 3.5 of the assignment.
     """
 
-        # Combine training and validation data
+    # timer of the whole process
+    start = perf_counter()
+
+    # Combine training and validation data
     X_train = pd.concat([splits.X_train, splits.X_valid], ignore_index=True)
     y_train = np.concatenate([splits.y_train, splits.y_valid])
 
@@ -36,37 +39,28 @@ def run_foundation_model(splits: DataSplits, seed: int) -> Any:
     X_subset, _, y_subset, _ = train_test_split(
             X_train,
             y_train,
-            train_size=5000,
+            train_size=10000,
             random_state=seed,
             stratify=y_train,
     )
 
-    # timer
-    start = perf_counter()
-
     # used TabPFN as the pre-trained tabular foundation model
     model = TabPFNClassifier(random_state=seed)
     print("Starting Fitting")
-    fit_timer = perf_counter
+    fit_timer = perf_counter()
     model.fit(X_subset, y_subset)
     print("Ended Fitting")
     print(perf_counter() - fit_timer)
 
-
-    #fitting the model on the train data
-    model.fit(X_subset, y_subset) # !! could need to use a subset but decide this late
-
-    # Predict in batches to prevent CUDA out-of-memory errors
+    # Predict in batches since cant otherwise with 8 gb GPU
     batch_size = 2000
     predictions = []
 
     print("start predicting")
     for i in range(0, len(splits.X_test), batch_size):
-        batch_start = perf_counter()
-        X_batch = splits.X_test[i:i + batch_size]
+        X_batch = splits.X_test.iloc[i:i + batch_size]
         y_batch = model.predict(X_batch)
         predictions.extend(y_batch)
-        current_batch = i // batch_size + 1
 
         print(
             f"Predicted {len(predictions)}/{len(splits.X_test)} | "
