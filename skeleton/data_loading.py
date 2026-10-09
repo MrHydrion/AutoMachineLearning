@@ -28,7 +28,9 @@ DATASETS = {
     "covertype": 1596,
 }
 
-os.environ["TABPFN_TOKEN"] = "tabpfn_sk_e2V4B2SIdiZIyKR5aJUNCXP9u5Qg1AfU9iREKn-LmJE"
+# token used for TABPFN, look at readme how to input it
+token = os.environ.get("TABPFN_TOKEN")
+
 
 @dataclass
 class DataSplits:
