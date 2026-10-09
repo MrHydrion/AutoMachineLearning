@@ -36,13 +36,16 @@ def run_foundation_model(splits: DataSplits, seed: int) -> Any:
     y_train = np.concatenate([splits.y_train, splits.y_valid])
 
     # reducing the training size since it will otherwise be too big
-    X_subset, _, y_subset, _ = train_test_split(
-            X_train,
-            y_train,
-            train_size=10000,
-            random_state=seed,
-            stratify=y_train,
-    )
+    if len(X_train) > 10000:
+        X_subset, _, y_subset, _ = train_test_split(
+                X_train,
+                y_train,
+                train_size=10000,
+                random_state=seed,
+                stratify=y_train,
+        )
+    else:
+        X_subset, y_subset = X_train, y_train
 
     # used TabPFN as the pre-trained tabular foundation model
     model = TabPFNClassifier(random_state=seed)

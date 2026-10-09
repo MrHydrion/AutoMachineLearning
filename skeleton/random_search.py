@@ -41,8 +41,6 @@ def optimise_random_search(
             best_score = eval_dict["objective"]
             best_config = eval_dict["configuration"]
 
-    # print(f"best found config: {best_config} ")
-    # print(f"best found score: {best_score}")
 
     # return the best found config with its score
     return best_config, best_score, results  

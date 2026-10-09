@@ -1,7 +1,9 @@
-# Optional student skeleton
+## Empirical AutoML on Tabular Data
 
-Use or adapt this code, connect suitable packages, or build your own pipeline.
-The handout defines the requirements; supplied settings are examples.
+For this assignment, we compared three approaches of hyperparameter optimization: Random Search, SMBO and Hyperband. 
+We compared how well these algorithms performed on a Random Forest Classifier accross five different tabular datasets. 
+an untuned Random forest wasused as a baseline and TabPFN was evaluatedd as a pre-trained tabular foundation model on the largest dataset
+
 
 ## Set up
 
@@ -12,9 +14,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 ```
-
-Add dependencies for your chosen optimisers and foundation model, recording
-versions and any model-access steps.
 
 ## Get started
 
